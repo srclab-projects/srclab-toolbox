@@ -1,0 +1,16 @@
+pluginManagement {
+  repositories {
+    gradlePluginPortal()
+    jcenter()
+  }
+  plugins {
+    id "org.jetbrains.kotlin.jvm" version "${kotlinVersion}"
+  }
+}
+
+rootProject.name = 'ut-build'
+
+//Including Boat projects
+file("${rootDir}/").eachDirMatch(~/ut-.*/) { dir ->
+  include ":${dir.name}"
+}

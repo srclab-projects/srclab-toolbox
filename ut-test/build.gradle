@@ -1,0 +1,22 @@
+plugins {
+  id 'build.kotlin-publish-jar'
+}
+
+description = "Untitled Test Dependencies Management"
+
+java {
+  registerFeature('optionalSupport') {
+    usingSourceSet(sourceSets.main)
+  }
+}
+
+dependencies {
+  implementation(platform(project(":ut-dependencies")))
+
+  api("org.jetbrains.kotlin:kotlin-test-testng")
+}
+
+test {
+  useTestNG()
+  include("**/*Test.class", "**/*TestKt.class")
+}

@@ -1,0 +1,26 @@
+plugins {
+  id 'build.kotlin-publish-jar'
+}
+
+description = "Untitled source: Convert source."
+
+java {
+  registerFeature('optionalSupport') {
+    usingSourceSet(sourceSets.main)
+  }
+}
+
+dependencies {
+  implementation(platform(project(":ut-dependencies")))
+
+  api("xyz.srclab.common:boat-all")
+
+  testCompile(project(":ut-test"))
+  testCompile("org.springframework:spring-core")
+  testCompile("cglib:cglib")
+}
+
+test {
+  useTestNG()
+  include("**/*Test.class", "**/*TestKt.class")
+}
