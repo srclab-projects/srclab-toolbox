@@ -13,7 +13,7 @@ ext["infos"] = [
     url          : "https://github.com/srclab-projects/untitled",
 
     //Project inception year
-    inceptionYear: "2020",
+    inceptionYear: "2021",
 
     //Licenses
     licenses     : [
@@ -27,7 +27,7 @@ ext["infos"] = [
     developers   : [
         [
             id   : "fredsuvn",
-            name : "孙谦",
+            name : "Sun Qian",
             email: "fredsuvn@163.com",
             url  : "https://github.com/fredsuvn",
         ],
@@ -51,11 +51,11 @@ ext["infos"] = [
         //Snapshot id
         snapshotId   : "sonatype",
 
-        //Whether publish as Official
-        isOfficial   : false,
+        //Whether publish as Release
+        isRelease    : false,
 
-        //Publish id
-        officialId   : "sonatype",
+        //Release id
+        releaseId    : "sonatype",
 
         //Whether signing
         isSigning    : false,

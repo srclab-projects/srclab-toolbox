@@ -16,13 +16,18 @@ class SourceConverterTest {
     private val antPathMatcher = AntPathMatcher()
 
     @Test
+    fun convertXteamBom() {
+        convert("dependencies")
+    }
+
+    @Test
     fun convertXtea() {
-        convert("xt")
+        convert("xtea")
     }
 
     @Test
     fun convertXteaSpringBoot() {
-        convert("xt-spring-boot")
+        convert("xtea-spring-boot")
     }
 
     private fun convert(name: String) {
