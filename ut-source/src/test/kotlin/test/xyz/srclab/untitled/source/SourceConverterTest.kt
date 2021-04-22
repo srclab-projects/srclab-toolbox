@@ -17,7 +17,7 @@ class SourceConverterTest {
 
     @Test
     fun convertXteamBom() {
-        convert("dependencies")
+        convert("xteam-dependencies")
     }
 
     @Test
