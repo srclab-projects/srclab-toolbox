@@ -31,6 +31,11 @@ class SourceConverterTest {
         convert("xtea-spring-boot")
     }
 
+    @Test
+    fun convertGrpcSpringBoot() {
+        convert("grpc-spring-boot")
+    }
+
     private fun convert(name: String) {
 
         fun Any?.asStringList(): List<String> {
