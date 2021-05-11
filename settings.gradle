@@ -1,6 +1,6 @@
-rootProject.name = 'ut-build'
+rootProject.name = 'srclab-toolbox'
 
 //Including Boat projects
-file("${rootDir}/").eachDirMatch(~/ut-.*/) { dir ->
+file("${rootDir}/").eachDirMatch(~/tool-.*/) { dir ->
   include ":${dir.name}"
 }

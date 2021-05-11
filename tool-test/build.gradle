@@ -2,7 +2,7 @@ plugins {
   id 'build.kotlin-publish-jar'
 }
 
-description = "Untitled Test Dependencies Management"
+description = "Toolbox Test Dependencies Management"
 
 java {
   registerFeature('optionalSupport') {
@@ -11,7 +11,7 @@ java {
 }
 
 dependencies {
-  api(platform(project(":ut-dependencies")))
+  api(platform(project(":tool-dependencies")))
 
   api("xyz.srclab.common:boat-test")
 }

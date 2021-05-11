@@ -7,13 +7,13 @@ ext["infos"] = [
   version      : "0.0.0",
 
   //Group
-  group        : "xyz.srclab.untitled",
+  group        : "xyz.srclab.toolbox",
 
   //Project url
-  url          : "https://github.com/srclab-projects/untitled",
+  url          : "https://github.com/srclab-projects/srclab-toolbox",
 
   //Project inception year
-  inceptionYear: "2020",
+  inceptionYear: "2019",
 
   //Licenses
   licenses     : [
@@ -26,10 +26,10 @@ ext["infos"] = [
   //Developers
   developers   : [
     [
-      id   : "demo",
-      name : "demo",
-      email: "demo@demo.com",
-      url  : "https://github.com/demo",
+      id   : "fredsuvn",
+      name : "孙谦",
+      email: "fredsuvn@163.com",
+      url  : "https://github.com/fredsuvn",
     ],
     [
       id             : "SrcLab",

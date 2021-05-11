@@ -2,7 +2,7 @@ plugins {
   id 'build.kotlin-publish-platform'
 }
 
-description = "Untitled Dependencies Management"
+description = "Toolbox Dependencies Management"
 
 javaPlatform {
   allowDependencies()
