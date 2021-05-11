@@ -14,9 +14,9 @@ dependencies {
   implementation(platform(project(":ut-dependencies")))
 
   implementation("xyz.srclab.common:boat")
+  implementation("org.springframework:spring-core")
 
   testCompile(project(":ut-test"))
-  testCompile("org.springframework:spring-core")
   testCompile("cglib:cglib")
 }
 

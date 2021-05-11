@@ -3,7 +3,7 @@ plugins {
   id 'build.asciidoc'
 }
 
-description = "Build for Untitled"
+description = "Build for Untitled projects"
 
 printer.info("Build $project.name")
 
