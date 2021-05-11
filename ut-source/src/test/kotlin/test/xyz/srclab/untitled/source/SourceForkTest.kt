@@ -1,20 +1,19 @@
 package test.xyz.srclab.untitled.source
 
-import org.springframework.util.AntPathMatcher
 import org.testng.annotations.Test
 import org.yaml.snakeyaml.Yaml
 import xyz.srclab.common.base.asAny
 import xyz.srclab.common.base.loadStringResource
-import xyz.srclab.untitled.source.SourceConverter
+import xyz.srclab.untitled.source.SourceFork
+import xyz.srclab.untitled.source.replaceFork
+import java.nio.file.Path
 
 /**
  * @author sunqian
  */
-class SourceConverterTest {
+class SourceForkTest {
 
-    private val converter = SourceConverter.DEFAULT
-
-    private val antPathMatcher = AntPathMatcher()
+    private val converter = SourceFork.DEFAULT
 
     @Test
     fun convertXteamBom() {
@@ -50,25 +49,14 @@ class SourceConverterTest {
         val yaml = Yaml()
         val all: Map<String, Map<String, Any>> = yaml.load(yamlStr)
         val target = all[name]!!
+        val replaceDirectories: Map<String, String> = target["replaceDirectories"].asStringMap()
+        val replaceContents: Map<String, String> = target["replaceContents"].asStringMap()
         val filter = target["filter"].asStringList()
         val filterNot = target["filterNot"].asStringList()
-        converter.convert(
-            target["sourcePath"] as String,
-            target["destPath"] as String,
-            target["replaceDir"].asStringMap(),
-            target["replaceContent"].asStringMap(),
-        ) {
-            for (s in filterNot) {
-                if (antPathMatcher.match(s, it)) {
-                    return@convert false
-                }
-            }
-            for (s in filter) {
-                if (antPathMatcher.match(s, it)) {
-                    return@convert true
-                }
-            }
-            false
-        }
+        converter.fork(
+            Path.of(target["from"] as String),
+            Path.of(target["to"] as String),
+            replaceFork(replaceDirectories, replaceContents, filter, filterNot)
+        )
     }
 }
