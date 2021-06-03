@@ -17,7 +17,7 @@ class SourceForkTest {
 
     @Test
     fun convertXteamBom() {
-        convert("xteam-dependencies")
+        convert("xhome-dependencies")
     }
 
     @Test
